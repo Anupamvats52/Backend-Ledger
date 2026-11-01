@@ -1,4 +1,4 @@
-# Backend-Ledger
+# Banking Backend System
 
 A real-world banking backend built with **Node.js** and **Express**. This project demonstrates how a production-style banking system is designed, covering authentication, account management, transactions, and ledger handling.
 
@@ -37,6 +37,61 @@ The project shows how bank transactions flow end to end: how credit and debit op
 ├── package.json
 └── README.md
 ```
+
+## Getting Started
+
+### Prerequisites
+
+- Node.js (v18 or higher)
+- npm
+- A running database instance (e.g. MongoDB)
+
+### Installation
+
+```bash
+# Clone the repository
+git clone https://github.com/<your-username>/<your-repo>.git
+cd <your-repo>
+
+# Install dependencies
+npm install
+```
+
+### Environment Variables
+
+Create a `.env` file in the root directory:
+
+```env
+PORT=3000
+MONGO_URI=your_database_connection_string
+JWT_SECRET=your_jwt_secret
+```
+
+### Run the Server
+
+```bash
+# Development
+npm run dev
+
+# Production
+npm start
+```
+
+The server will start at `http://localhost:3000`.
+
+## API Endpoints
+
+| Method | Endpoint                | Description                  |
+| ------ | ----------------------- | ---------------------------- |
+| POST   | `/api/auth/register`    | Register a new user          |
+| POST   | `/api/auth/login`       | Log in and receive a token   |
+| POST   | `/api/accounts`         | Create a new account         |
+| GET    | `/api/accounts`         | Get user's accounts          |
+| POST   | `/api/transactions`     | Create a credit/debit entry  |
+| GET    | `/api/transactions`     | List transactions            |
+| GET    | `/api/ledger/:accountId`| View ledger for an account   |
+
+> Update these endpoints to match your actual routes.
 
 ## How Transactions Work
 
